@@ -22,6 +22,10 @@ class ViewController: UITableViewController {
             urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
         }
         
+        // Challenge 1 - Add a Credits Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(showCredits))
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(startGame))
+
         //let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         //let urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         
@@ -69,5 +73,10 @@ class ViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    @objc func showCredits() {
+        let ac = UIAlertController(title: "Credits", message: "Data provided by the We The People API of whitehouse.gov", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
 }
 
