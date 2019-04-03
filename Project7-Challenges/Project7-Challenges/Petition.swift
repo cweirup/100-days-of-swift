@@ -14,3 +14,10 @@ struct Petition: Codable {
     var signatureCount: Int
 }
 
+extension Petition {
+    static func formatStringNumber(_ number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value: number)) ?? ""
+    }
+}

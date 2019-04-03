@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
 
     var petitions = [Petition]()
+    var filteredPetitions = [Petition]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class ViewController: UITableViewController {
         } else {
             urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
         }
+        
+        // Challenge 1 - Add a Credits Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(showCredits))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(filterPetitions))
 
         //let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         //let urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
@@ -49,17 +54,18 @@ class ViewController: UITableViewController {
         
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
+            filteredPetitions = jsonPetitions.results
             tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return petitions.count
+        return filteredPetitions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let petition = petitions[indexPath.row]
+        let petition = filteredPetitions[indexPath.row]
         cell.textLabel?.text = petition.title
         cell.detailTextLabel?.text = petition.body
         return cell
@@ -67,9 +73,54 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.detailItem = petitions[indexPath.row]
+        vc.detailItem = filteredPetitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    @objc func showCredits() {
+        let ac = UIAlertController(title: "Credits", message: "Data provided by the We The People API of whitehouse.gov", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    @objc func filterPetitions() {
+        let ac = UIAlertController(title: "Search", message: "Find petitions by search term or empty to reset", preferredStyle: .alert)
+        ac.addTextField()
+        
+        let searchAction = UIAlertAction(title: "Search", style: .default) {
+            [weak self, weak ac] action in
+            guard let searchTerm = ac?.textFields?[0].text else { return }
+            self?.submit(searchTerm)
+        }
+        
+        ac.addAction(searchAction)
+        present(ac, animated: true)
+    }
+    
+    func submit(_ searchTerm: String) {
+        // Empty out the filteredPetitions
+        filteredPetitions.removeAll(keepingCapacity: true)
+        
+        // Get lowercased version of the search word
+        let word = searchTerm.lowercased()
+        
+        // Look through the array of Structs for the term
+        // and copy those entries into filteredPetitions
+        if word == "" {
+            filteredPetitions = petitions
+            title = "Petitions"
+        } else {
+            for petition in petitions {
+                if petition.title.lowercased().contains(word) || petition.body.lowercased().contains(word) {
+                    filteredPetitions.append(petition)
+                }
+            }
+            title = "Filter: \(word)"
+        }
+        
+        // Reload the tableView
+        tableView.reloadData()
+        
+    }
 }
 
