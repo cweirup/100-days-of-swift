@@ -63,9 +63,14 @@ class ViewController: UIViewController {
         
         for label in [label1, label2, label3, label4, label5] {
             // Challenge 1 - Replace widthAnchor with leadingAnchor and trailingAnchor
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            // Challenge 2 - Use safeAreaLayoutGuide for leadingAnchor and trailingAnchor
+            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            
+            // Challenge 3 - Make labels 1/5 the height of the screen minus 10 for spacing
+            // ORIGINAL - label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            // TRY 1 - label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2, constant: 0).isActive = true
+            label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 1/5, constant: -10).isActive = true
             
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
