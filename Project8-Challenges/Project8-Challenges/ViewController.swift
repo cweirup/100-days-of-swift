@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     }
     
     var level = 1
+    var correctlyAnswered = 0
     
     override func loadView() {
         view = UIView()
@@ -157,10 +158,13 @@ class ViewController: UIViewController {
             splitAnswers?[solutionPosition] = answerText
             answersLabel.text = splitAnswers?.joined(separator: "\n")
             
+            // Challenge 3 - Deduct points if player makes an incorrect guess.
+            //               Update how to determine to get to next level.
             currentAnswer.text = ""
             score += 1
+            correctlyAnswered += 1
             
-            if score % 7 == 0 {
+            if correctlyAnswered % 7 == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go", style: .default, handler: levelUp))
                 present(ac, animated: true)
@@ -168,6 +172,10 @@ class ViewController: UIViewController {
         } else {
             // Challenge 2 - Show alert if person enters incorrect answer
             clearAnswer()
+            
+            // Challenge 3 - Deduct points if player makes an incorrect guess.
+            //               Update how to determine to get to next level.
+            score -= 1
             
             let ac = UIAlertController(title: "Incorrect", message: "That word is not in the list.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
