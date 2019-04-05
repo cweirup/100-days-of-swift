@@ -165,6 +165,13 @@ class ViewController: UIViewController {
                 ac.addAction(UIAlertAction(title: "Let's go", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            // Challenge 2 - Show alert if person enters incorrect answer
+            clearAnswer()
+            
+            let ac = UIAlertController(title: "Incorrect", message: "That word is not in the list.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+            present(ac, animated: true)
         }
     }
     
@@ -180,6 +187,10 @@ class ViewController: UIViewController {
     }
     
     @objc func clearTapped(_ sender: UIButton) {
+        clearAnswer()
+    }
+    
+    func clearAnswer() {
         currentAnswer.text = ""
         
         for button in activatedButtons {
