@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project8-Challenges/ViewController.swift"
+            timestampString = "576342740.102753"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "updateLabels(clue:solution:letters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.updateLabels(clue: Swift.String, solution: Swift.String, letters: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576292662.904737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "257"
+                  endingLineNumber = "257"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Project8_Day40_Challenge.ViewController.updateLabels(clue: Swift.String, solution: Swift.String, letters: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576292662.907644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "257"
+                  endingLineNumber = "257"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project8-Challenges/ViewController.swift"
+            timestampString = "576342740.103421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.cluesLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.4464819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.cluesLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.450928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.cluesLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.454893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.cluesLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.4608409"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Project8_Day40_Challenge.ViewController"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.464855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Project8_Day40_Challenge.ViewController&gt;"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333085.468124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "137">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project8-Challenges/ViewController.swift"
+            timestampString = "576342740.103861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "loadLevel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project8-Challenges/ViewController.swift"
+            timestampString = "576342740.104331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "loadLevel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project8_Day40_Challenge.ViewController.loadLevel() -&gt; ()"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333291.804311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Project8_Day40_Challenge.ViewController.loadLevel() -&gt; ()"
+                  moduleName = "Project8-Day40 Challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/e78737/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Project8-Day40%20Challenge/Project8-Challenges/ViewController.swift"
+                  timestampString = "576333291.807205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
