@@ -43,6 +43,14 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     @objc func addNewPerson() {
         let picker = UIImagePickerController()
+        
+        // Challenge 2 - Allow use of the camera if availabe
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
