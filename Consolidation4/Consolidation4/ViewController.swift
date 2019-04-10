@@ -106,12 +106,24 @@ class ViewController: UIViewController {
         for (index, char) in theLetters.enumerated() {
             letterButtons[index].setTitle(String(char), for: .normal)
         }
+        
+        // This is a hack. Hide all of the ? Buttons
+        for button in letterButtons {
+            if button.titleLabel?.text == "?" {
+                button.isHidden = true
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Load List of Words
+        performSelector(inBackground: #selector(loadWords), with: nil)
+        
+    }
+
+    @objc func loadWords() {
         if let startWordsURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 allWords = startWords.components(separatedBy: "\n")
@@ -122,10 +134,10 @@ class ViewController: UIViewController {
             allWords = ["silkword"]
         }
         
-        startNewGame()
+        performSelector(onMainThread: #selector(startNewGame), with: nil, waitUntilDone: false)
     }
-
-    func startNewGame() {
+    
+    @objc func startNewGame() {
         // Reset the letter buttons
         for button in letterButtons {
             button.isEnabled = true
