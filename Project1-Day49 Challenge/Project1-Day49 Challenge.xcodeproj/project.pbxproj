@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1415CD2C225EC169005E0476 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415CD2B225EC169005E0476 /* PictureCell.swift */; };
 		1415CD2E225EC27E005E0476 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415CD2D225EC27E005E0476 /* Picture.swift */; };
+		14F674F9226175C3004DC42C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F674F8226175C3004DC42C /* PictureCell.swift */; };
 		2E5376C422491D4200ECD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5376C322491D4200ECD4FF /* AppDelegate.swift */; };
 		2E5376C622491D4200ECD4FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5376C522491D4200ECD4FF /* ViewController.swift */; };
 		2E5376C922491D4200ECD4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5376C722491D4200ECD4FF /* Main.storyboard */; };
@@ -28,9 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1415CD2B225EC169005E0476 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		1415CD2D225EC27E005E0476 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		2E5376C022491D4200ECD4FF /* Project1-Day44 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project1-Day44 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F674F8226175C3004DC42C /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PictureCell.swift; path = "/Users/e78737/Library/Mobile Documents/com~apple~CloudDocs/100 Days of Swift/Project1-Day49 Challenge/Project1-Day49 Challenge/PictureCell.swift"; sourceTree = "<absolute>"; };
+		2E5376C022491D4200ECD4FF /* Project1-Day49 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project1-Day49 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5376C322491D4200ECD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5376C522491D4200ECD4FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E5376C822491D4200ECD4FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		2E5376B722491D4200ECD4FF = {
 			isa = PBXGroup;
 			children = (
-				2E5376C222491D4200ECD4FF /* Project1-Day44 Challenge */,
+				2E5376C222491D4200ECD4FF /* Project1-Day49 Challenge */,
 				2E5376C122491D4200ECD4FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,14 +72,15 @@
 		2E5376C122491D4200ECD4FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E5376C022491D4200ECD4FF /* Project1-Day44 Challenge.app */,
+				2E5376C022491D4200ECD4FF /* Project1-Day49 Challenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E5376C222491D4200ECD4FF /* Project1-Day44 Challenge */ = {
+		2E5376C222491D4200ECD4FF /* Project1-Day49 Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				14F674F8226175C3004DC42C /* PictureCell.swift */,
 				2E5376C322491D4200ECD4FF /* AppDelegate.swift */,
 				2E5376C522491D4200ECD4FF /* ViewController.swift */,
 				2E5376EA224C35C600ECD4FF /* DetailViewController.swift */,
@@ -88,10 +89,9 @@
 				2E5376CC22491D4800ECD4FF /* LaunchScreen.storyboard */,
 				2E5376CF22491D4800ECD4FF /* Info.plist */,
 				2E5376D522491E7D00ECD4FF /* Content */,
-				1415CD2B225EC169005E0476 /* PictureCell.swift */,
 				1415CD2D225EC27E005E0476 /* Picture.swift */,
 			);
-			path = "Project1-Day44 Challenge";
+			path = "Project1-Day49 Challenge";
 			sourceTree = "<group>";
 		};
 		2E5376D522491E7D00ECD4FF /* Content */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E5376BF22491D4200ECD4FF /* Project1-Day44 Challenge */ = {
+		2E5376BF22491D4200ECD4FF /* Project1-Day49 Challenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E5376D222491D4800ECD4FF /* Build configuration list for PBXNativeTarget "Project1-Day44 Challenge" */;
+			buildConfigurationList = 2E5376D222491D4800ECD4FF /* Build configuration list for PBXNativeTarget "Project1-Day49 Challenge" */;
 			buildPhases = (
 				2E5376BC22491D4200ECD4FF /* Sources */,
 				2E5376BD22491D4200ECD4FF /* Frameworks */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = "Project1-Day44 Challenge";
+			name = "Project1-Day49 Challenge";
 			productName = Project1;
-			productReference = 2E5376C022491D4200ECD4FF /* Project1-Day44 Challenge.app */;
+			productReference = 2E5376C022491D4200ECD4FF /* Project1-Day49 Challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,10 +143,11 @@
 				TargetAttributes = {
 					2E5376BF22491D4200ECD4FF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
-			buildConfigurationList = 2E5376BB22491D4200ECD4FF /* Build configuration list for PBXProject "Project1-Day44 Challenge" */;
+			buildConfigurationList = 2E5376BB22491D4200ECD4FF /* Build configuration list for PBXProject "Project1-Day49 Challenge" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +160,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E5376BF22491D4200ECD4FF /* Project1-Day44 Challenge */,
+				2E5376BF22491D4200ECD4FF /* Project1-Day49 Challenge */,
 			);
 		};
 /* End PBXProject section */
@@ -192,9 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1415CD2C225EC169005E0476 /* PictureCell.swift in Sources */,
 				1415CD2E225EC27E005E0476 /* Picture.swift in Sources */,
 				2E5376EB224C35C600ECD4FF /* DetailViewController.swift in Sources */,
+				14F674F9226175C3004DC42C /* PictureCell.swift in Sources */,
 				2E5376C622491D4200ECD4FF /* ViewController.swift in Sources */,
 				2E5376C422491D4200ECD4FF /* AppDelegate.swift in Sources */,
 			);
@@ -344,14 +345,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2884XZJMX9;
-				INFOPLIST_FILE = "Project1-Day44 Challenge/Info.plist";
+				INFOPLIST_FILE = "Project1-Day49 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project1-Day40-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project1-Day49-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -362,14 +363,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2884XZJMX9;
-				INFOPLIST_FILE = "Project1-Day44 Challenge/Info.plist";
+				INFOPLIST_FILE = "Project1-Day49 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project1-Day40-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project1-Day49-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -377,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E5376BB22491D4200ECD4FF /* Build configuration list for PBXProject "Project1-Day44 Challenge" */ = {
+		2E5376BB22491D4200ECD4FF /* Build configuration list for PBXProject "Project1-Day49 Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E5376D022491D4800ECD4FF /* Debug */,
@@ -386,7 +387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E5376D222491D4800ECD4FF /* Build configuration list for PBXNativeTarget "Project1-Day44 Challenge" */ = {
+		2E5376D222491D4800ECD4FF /* Build configuration list for PBXNativeTarget "Project1-Day49 Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E5376D322491D4800ECD4FF /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E5376BF22491D4200ECD4FF"
-               BuildableName = "Project1-Day44 Challenge.app"
-               BlueprintName = "Project1-Day44 Challenge"
-               ReferencedContainer = "container:Project1-Day44 Challenge.xcodeproj">
+               BuildableName = "Project1-Day49 Challenge.app"
+               BlueprintName = "Project1-Day49 Challenge"
+               ReferencedContainer = "container:Project1-Day49 Challenge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E5376BF22491D4200ECD4FF"
-            BuildableName = "Project1-Day44 Challenge.app"
-            BlueprintName = "Project1-Day44 Challenge"
-            ReferencedContainer = "container:Project1-Day44 Challenge.xcodeproj">
+            BuildableName = "Project1-Day49 Challenge.app"
+            BlueprintName = "Project1-Day49 Challenge"
+            ReferencedContainer = "container:Project1-Day49 Challenge.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E5376BF22491D4200ECD4FF"
-            BuildableName = "Project1-Day44 Challenge.app"
-            BlueprintName = "Project1-Day44 Challenge"
-            ReferencedContainer = "container:Project1-Day44 Challenge.xcodeproj">
+            BuildableName = "Project1-Day49 Challenge.app"
+            BlueprintName = "Project1-Day49 Challenge"
+            ReferencedContainer = "container:Project1-Day49 Challenge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E5376BF22491D4200ECD4FF"
-            BuildableName = "Project1-Day44 Challenge.app"
-            BlueprintName = "Project1-Day44 Challenge"
-            ReferencedContainer = "container:Project1-Day44 Challenge.xcodeproj">
+            BuildableName = "Project1-Day49 Challenge.app"
+            BlueprintName = "Project1-Day49 Challenge"
+            ReferencedContainer = "container:Project1-Day49 Challenge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

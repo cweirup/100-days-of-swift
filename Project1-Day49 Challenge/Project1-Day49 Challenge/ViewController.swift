@@ -31,7 +31,7 @@ class ViewController: UICollectionViewController {
         for item in items {
             if item.hasPrefix("nssl") {
                 // this is a picture to load!
-                let picture = Picture(name: item, image: item)
+                let picture = Picture(name: item, image: item, subtitle: "Views: 0", views: 0)
                 pictures.append(picture)
             }
         }
@@ -50,7 +50,8 @@ class ViewController: UICollectionViewController {
         let picture = pictures[indexPath.item]
         cell.name.text = picture.name
         cell.imageView.image = UIImage(named: picture.image)
-
+        cell.subtitle.text = picture.subtitle
+        
         return cell
     }
     
@@ -59,6 +60,8 @@ class ViewController: UICollectionViewController {
             vc.selectedImage = pictures[indexPath.item].image
             vc.selectedImageNumber = indexPath.item + 1
             vc.totalImages = pictures.count
+            pictures[indexPath.item].views += 1
+            collectionView.reloadItems(at: [indexPath])
             navigationController?.pushViewController(vc, animated: true)
         }
     }
