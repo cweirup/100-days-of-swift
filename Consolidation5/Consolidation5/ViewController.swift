@@ -98,11 +98,6 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         present(ac, animated: true)
         
     }
-
-//    func getDocumentDirectory() -> URL {
-//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        return paths[0]
-//    }
     
     func save() {
         let jsonEncoder = JSONEncoder()
