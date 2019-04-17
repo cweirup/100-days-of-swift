@@ -94,7 +94,7 @@
                     <navigationItem key="navigationItem" id="IMy-mY-KoJ"/>
                     <connections>
                         <outlet property="imageView" destination="wYP-Us-Apq" id="Btc-yq-NIX"/>
-                        <outlet property="intensity" destination="5P6-8W-knF" id="Jav-cU-ehL"/>
+                        <outlet property="intensity" destination="yE7-cR-3Bi" id="Lbe-EE-Nid"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
