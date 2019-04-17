@@ -32,6 +32,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
         
+        // Sliders set for CISepiaTone
+        intensity.isEnabled = true
+        radius.isEnabled = false
+        scale.isEnabled = false
+        
         filterButton.setTitle("CISepiaTone", for: .normal)
     }
 
