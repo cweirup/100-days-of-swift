@@ -17,10 +17,13 @@
 		2E17FE832267F2F200686D45 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17FE822267F2F200686D45 /* WhackSlot.swift */; };
 		2E17FE8622694A8C00686D45 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8422694A8B00686D45 /* whack.caf */; };
 		2E17FE8722694A8C00686D45 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8522694A8B00686D45 /* whackBad.caf */; };
+		2E17FE892269506000686D45 /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8822694F9F00686D45 /* gameover.caf */; };
+		2E17FE8B2269513B00686D45 /* Mud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8A2269513B00686D45 /* Mud.sks */; };
+		2E17FE8D22696E1C00686D45 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8C22696E1C00686D45 /* Smoke.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E17FE632267EF7C00686D45 /* Project14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project14.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E17FE632267EF7C00686D45 /* Project14-Challenges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project14-Challenges.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E17FE662267EF7C00686D45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E17FE682267EF7C00686D45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		2E17FE6C2267EF7C00686D45 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		2E17FE822267F2F200686D45 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		2E17FE8422694A8B00686D45 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		2E17FE8522694A8B00686D45 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		2E17FE8822694F9F00686D45 /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
+		2E17FE8A2269513B00686D45 /* Mud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mud.sks; sourceTree = "<group>"; };
+		2E17FE8C22696E1C00686D45 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,7 @@
 		2E17FE5A2267EF7C00686D45 = {
 			isa = PBXGroup;
 			children = (
-				2E17FE652267EF7C00686D45 /* Project14 */,
+				2E17FE652267EF7C00686D45 /* Project14-Challenges */,
 				2E17FE642267EF7C00686D45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +62,12 @@
 		2E17FE642267EF7C00686D45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E17FE632267EF7C00686D45 /* Project14.app */,
+				2E17FE632267EF7C00686D45 /* Project14-Challenges.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E17FE652267EF7C00686D45 /* Project14 */ = {
+		2E17FE652267EF7C00686D45 /* Project14-Challenges */ = {
 			isa = PBXGroup;
 			children = (
 				2E17FE662267EF7C00686D45 /* AppDelegate.swift */,
@@ -75,16 +81,19 @@
 				2E17FE782267EF7F00686D45 /* Info.plist */,
 				2E17FE8422694A8B00686D45 /* whack.caf */,
 				2E17FE8522694A8B00686D45 /* whackBad.caf */,
+				2E17FE8822694F9F00686D45 /* gameover.caf */,
+				2E17FE8A2269513B00686D45 /* Mud.sks */,
+				2E17FE8C22696E1C00686D45 /* Smoke.sks */,
 			);
-			path = Project14;
+			path = "Project14-Challenges";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E17FE622267EF7C00686D45 /* Project14 */ = {
+		2E17FE622267EF7C00686D45 /* Project14-Challenges */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E17FE7B2267EF7F00686D45 /* Build configuration list for PBXNativeTarget "Project14" */;
+			buildConfigurationList = 2E17FE7B2267EF7F00686D45 /* Build configuration list for PBXNativeTarget "Project14-Challenges" */;
 			buildPhases = (
 				2E17FE5F2267EF7C00686D45 /* Sources */,
 				2E17FE602267EF7C00686D45 /* Frameworks */,
@@ -94,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = Project14;
+			name = "Project14-Challenges";
 			productName = Project14;
-			productReference = 2E17FE632267EF7C00686D45 /* Project14.app */;
+			productReference = 2E17FE632267EF7C00686D45 /* Project14-Challenges.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2E17FE5E2267EF7C00686D45 /* Build configuration list for PBXProject "Project14" */;
+			buildConfigurationList = 2E17FE5E2267EF7C00686D45 /* Build configuration list for PBXProject "Project14-Challenges" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E17FE622267EF7C00686D45 /* Project14 */,
+				2E17FE622267EF7C00686D45 /* Project14-Challenges */,
 			);
 		};
 /* End PBXProject section */
@@ -141,8 +150,11 @@
 				2E17FE8622694A8C00686D45 /* whack.caf in Resources */,
 				2E17FE692267EF7C00686D45 /* GameScene.sks in Resources */,
 				2E17FE742267EF7F00686D45 /* Assets.xcassets in Resources */,
+				2E17FE8B2269513B00686D45 /* Mud.sks in Resources */,
 				2E17FE772267EF7F00686D45 /* LaunchScreen.storyboard in Resources */,
+				2E17FE892269506000686D45 /* gameover.caf in Resources */,
 				2E17FE8722694A8C00686D45 /* whackBad.caf in Resources */,
+				2E17FE8D22696E1C00686D45 /* Smoke.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +316,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2884XZJMX9;
-				INFOPLIST_FILE = Project14/Info.plist;
+				INFOPLIST_FILE = "Project14-Challenges/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weirup.Project14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project14-Challenges";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -322,12 +334,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2884XZJMX9;
-				INFOPLIST_FILE = Project14/Info.plist;
+				INFOPLIST_FILE = "Project14-Challenges/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weirup.Project14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.weirup.Project14-Challenges";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -337,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E17FE5E2267EF7C00686D45 /* Build configuration list for PBXProject "Project14" */ = {
+		2E17FE5E2267EF7C00686D45 /* Build configuration list for PBXProject "Project14-Challenges" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E17FE792267EF7F00686D45 /* Debug */,
@@ -346,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E17FE7B2267EF7F00686D45 /* Build configuration list for PBXNativeTarget "Project14" */ = {
+		2E17FE7B2267EF7F00686D45 /* Build configuration list for PBXNativeTarget "Project14-Challenges" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E17FE7C2267EF7F00686D45 /* Debug */,

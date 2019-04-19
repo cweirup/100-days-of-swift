@@ -86,11 +86,21 @@ class GameScene: SKScene {
             for slot in slots {
                 slot.hide()
             }
-                        
+            
+            run(SKAction.playSoundFileNamed("gameover.caf", waitForCompletion: true))
+            
             let gameOver = SKSpriteNode(imageNamed: "gameOver")
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
             addChild(gameOver)
+            
+            let finalScore = SKLabelNode(fontNamed: "Chalkduster")
+            finalScore.text = "Final Score: \(score)"
+            finalScore.position = CGPoint(x: 512, y: 300)
+            finalScore.zPosition = 2
+            finalScore.horizontalAlignmentMode = .center
+            finalScore.fontSize = 48
+            addChild(finalScore)
             
             return
         }
