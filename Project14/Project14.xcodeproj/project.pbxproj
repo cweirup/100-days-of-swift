@@ -17,6 +17,7 @@
 		2E17FE832267F2F200686D45 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17FE822267F2F200686D45 /* WhackSlot.swift */; };
 		2E17FE8622694A8C00686D45 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8422694A8B00686D45 /* whack.caf */; };
 		2E17FE8722694A8C00686D45 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8522694A8B00686D45 /* whackBad.caf */; };
+		2E17FE892269506000686D45 /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2E17FE8822694F9F00686D45 /* gameover.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2E17FE822267F2F200686D45 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		2E17FE8422694A8B00686D45 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		2E17FE8522694A8B00686D45 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		2E17FE8822694F9F00686D45 /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				2E17FE782267EF7F00686D45 /* Info.plist */,
 				2E17FE8422694A8B00686D45 /* whack.caf */,
 				2E17FE8522694A8B00686D45 /* whackBad.caf */,
+				2E17FE8822694F9F00686D45 /* gameover.caf */,
 			);
 			path = Project14;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				2E17FE692267EF7C00686D45 /* GameScene.sks in Resources */,
 				2E17FE742267EF7F00686D45 /* Assets.xcassets in Resources */,
 				2E17FE772267EF7F00686D45 /* LaunchScreen.storyboard in Resources */,
+				2E17FE892269506000686D45 /* gameover.caf in Resources */,
 				2E17FE8722694A8C00686D45 /* whackBad.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
