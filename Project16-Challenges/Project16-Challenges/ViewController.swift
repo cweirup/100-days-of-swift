@@ -15,6 +15,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(changeMapView))
+        
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home of the 2012 Summer Olympics")
         let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "It was founded over one thousand years ago.")
         let paris = Capital(title: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), info: "Often called the City of Light.")
@@ -53,6 +55,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let placeInfo = capital.info
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+    }
+    
+    @objc func changeMapView() {
+        let ac = UIAlertController(title: "Map View", message: "Which map view would you like?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Standard", style: .default) { _ in
+            self.mapView.mapType = .standard
+        })
+        ac.addAction(UIAlertAction(title: "Satellite", style: .default) { _ in
+            self.mapView.mapType = .satellite
+        })
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default) { _ in
+            self.mapView.mapType = .hybrid
+        })
         present(ac, animated: true)
     }
 
