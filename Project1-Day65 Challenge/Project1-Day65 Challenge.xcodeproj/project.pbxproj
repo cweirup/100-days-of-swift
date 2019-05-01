@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1415CD2E225EC27E005E0476 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415CD2D225EC27E005E0476 /* Picture.swift */; };
-		14F674F9226175C3004DC42C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F674F8226175C3004DC42C /* PictureCell.swift */; };
 		2E5376C422491D4200ECD4FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5376C322491D4200ECD4FF /* AppDelegate.swift */; };
 		2E5376C622491D4200ECD4FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5376C522491D4200ECD4FF /* ViewController.swift */; };
 		2E5376C922491D4200ECD4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5376C722491D4200ECD4FF /* Main.storyboard */; };
@@ -25,11 +24,11 @@
 		2E5376E822491E7D00ECD4FF /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E5376DE22491E7D00ECD4FF /* nssl0033.jpg */; };
 		2E5376E922491E7D00ECD4FF /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E5376DF22491E7D00ECD4FF /* nssl0034.jpg */; };
 		2E5376EB224C35C600ECD4FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5376EA224C35C600ECD4FF /* DetailViewController.swift */; };
+		2EBD424522793A3300D84DDC /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD424422793A3200D84DDC /* PictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1415CD2D225EC27E005E0476 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		14F674F8226175C3004DC42C /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PictureCell.swift; path = "/Users/e78737/Library/Mobile Documents/com~apple~CloudDocs/100 Days of Swift/Project1-Day49 Challenge/Project1-Day49 Challenge/PictureCell.swift"; sourceTree = "<absolute>"; };
 		2E5376C022491D4200ECD4FF /* Project1-Day65 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project1-Day65 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5376C322491D4200ECD4FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E5376C522491D4200ECD4FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		2E5376DE22491E7D00ECD4FF /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		2E5376DF22491E7D00ECD4FF /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
 		2E5376EA224C35C600ECD4FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2EBD424422793A3200D84DDC /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 		2E5376C222491D4200ECD4FF /* Project1-Day65 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				14F674F8226175C3004DC42C /* PictureCell.swift */,
+				2EBD424422793A3200D84DDC /* PictureCell.swift */,
 				2E5376C322491D4200ECD4FF /* AppDelegate.swift */,
 				2E5376C522491D4200ECD4FF /* ViewController.swift */,
 				2E5376EA224C35C600ECD4FF /* DetailViewController.swift */,
@@ -195,7 +195,7 @@
 			files = (
 				1415CD2E225EC27E005E0476 /* Picture.swift in Sources */,
 				2E5376EB224C35C600ECD4FF /* DetailViewController.swift in Sources */,
-				14F674F9226175C3004DC42C /* PictureCell.swift in Sources */,
+				2EBD424522793A3300D84DDC /* PictureCell.swift in Sources */,
 				2E5376C622491D4200ECD4FF /* ViewController.swift in Sources */,
 				2E5376C422491D4200ECD4FF /* AppDelegate.swift in Sources */,
 			);
