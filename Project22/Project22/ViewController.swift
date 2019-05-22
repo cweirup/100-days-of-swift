@@ -15,7 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var beaconInRangeLabel: UILabel!
     
     var locationManager: CLLocationManager?
-    var isBeaconNew = true
+    var activeBeacon: UUID?
     let shapeLayer = CAShapeLayer()
     var taps = 0
     
@@ -30,41 +30,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.beaconInRangeLabel.text = "No beacon found"
         
         let center = view.center
+        
         let circularPath = UIBezierPath(arcCenter: center, radius: 150, startAngle: -CGFloat.pi / 2, endAngle: (CGFloat.pi * 2.0) - (CGFloat.pi / 2), clockwise: true)
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 10
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.lineWidth = 20
         shapeLayer.lineCap = CAShapeLayerLineCap.round
         shapeLayer.strokeEnd = 0
         
         shapeLayer.fillColor = UIColor.clear.cgColor
         
         view.layer.addSublayer(shapeLayer)
-        
-        // For indicator testing
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-    }
-
-    // For indicator testing
-    @objc func handleTap() {
-        switch taps {
-        case 0:
-            updateDistanceIndicator(toAmount: 0.25)
-        case 1:
-            updateDistanceIndicator(toAmount: 0.5)
-        case 2:
-            updateDistanceIndicator(toAmount: 0.9)
-        case 3:
-            updateDistanceIndicator(toAmount: 0.5)
-        case 4:
-            updateDistanceIndicator(toAmount: 0.25)
-        default:
-            updateDistanceIndicator(toAmount: 0.001)
-        }
-        
-        taps += 1
-        
     }
     
     func updateDistanceIndicator(toAmount: Float) {
@@ -94,9 +71,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let uuid2 = UUID(uuidString: "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6")!
         let uuid3 = UUID(uuidString: "5AFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")!
         
+        // FOR TESTING
+        // mbeacon -uuid "5A4BCFCE-174E-4BAC-A814-092E77F6B7E5" -major 123 -minor 456
+        // mbeacon -uuid "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6" -major 555 -minor 111
+        // mbeacon -uuid "5AFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" -major 123 -minor 987
+        
         let beaconRegion1 = CLBeaconRegion(proximityUUID: uuid1, major: 123, minor: 456, identifier: "MyBeacon")
         let beaconRegion2 = CLBeaconRegion(proximityUUID: uuid2, major: 555, minor: 111, identifier: "RadiusBeacon")
-         let beaconRegion3 = CLBeaconRegion(proximityUUID: uuid3, major: 123, minor: 987, identifier: "RedBearBeacon")
+        let beaconRegion3 = CLBeaconRegion(proximityUUID: uuid3, major: 123, minor: 987, identifier: "RedBearBeacon")
         
         let beaconRegions = [beaconRegion1, beaconRegion2, beaconRegion3]
         
@@ -104,8 +86,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager?.startMonitoring(for: region)
             locationManager?.startRangingBeacons(in: region)
         }
-//        locationManager?.startMonitoring(for: beaconRegion)
-//        locationManager?.startRangingBeacons(in: beaconRegion)
     }
     
     func update(id: String, distance: CLProximity) {
@@ -125,6 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.distanceReading.text = "RIGHT HERE"
                 self.updateDistanceIndicator(toAmount: 1.00)
             default:
+                self.beaconInRangeLabel.text = "No beacon found"
                 self.view.backgroundColor = .gray
                 self.distanceReading.text = "UNKNOWN"
                 self.updateDistanceIndicator(toAmount: 0.001)
@@ -134,18 +115,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if let beacon = beacons.first {
-            if isBeaconNew == true {
-                let ac = UIAlertController(title: "New Beacon Found", message: "We found a new iBeacon.", preferredStyle: .alert)
+            if beacon.proximityUUID != activeBeacon {
+                activeBeacon = beacon.proximityUUID
+                let ac = UIAlertController(title: "New Beacon Found", message: "We found beacon \(activeBeacon!.uuidString)", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                 present(ac, animated: true)
-                
-                isBeaconNew = false
             }
             
             update(id: beacon.proximityUUID.uuidString, distance: beacon.proximity)
-        } else {
-            isBeaconNew = true
-            update(id: "No beacon found", distance: .unknown)
         }
     }
 
