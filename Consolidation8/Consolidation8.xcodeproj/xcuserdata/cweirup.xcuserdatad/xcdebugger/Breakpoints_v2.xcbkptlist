@@ -9,28 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Consolidation8/DetailViewController.swift"
-            timestampString = "579741379.634369"
+            filePath = "Consolidation8/ViewController.swift"
+            timestampString = "580275316.94111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "addNote()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Consolidation8/DetailViewController.swift"
-            timestampString = "579741379.6345609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "save()"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,32 +22,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Consolidation8/ViewController.swift"
-            timestampString = "579741379.6346509"
+            timestampString = "580275316.9412301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "save(note:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "deleteNote(id:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Consolidation8.ViewController.deleteNote(id: Swift.String) -&gt; ()"
+                  moduleName = "Consolidation8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cweirup/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Consolidation8/Consolidation8/ViewController.swift"
+                  timestampString = "580273068.0604481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "310">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((offset: Swift.Int, element: Consolidation8.Note)) -&gt; Swift.Bool in Consolidation8.ViewController.deleteNote(id: Swift.String) -&gt; ()"
+                  moduleName = "Consolidation8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cweirup/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Consolidation8/Consolidation8/ViewController.swift"
+                  timestampString = "580273068.062866"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Consolidation8/DetailViewController.swift"
-            timestampString = "579741379.635226"
+            filePath = "Consolidation8/ViewController.swift"
+            timestampString = "580275316.94129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "viewWillDisappear(_:)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "updatedSelectedNote(newNote:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Consolidation8.ViewController.updatedSelectedNote(newNote: Consolidation8.Note) -&gt; ()"
+                  moduleName = "Consolidation8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cweirup/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Consolidation8/Consolidation8/ViewController.swift"
+                  timestampString = "580274632.871541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "406">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((offset: Swift.Int, element: Consolidation8.Note)) -&gt; Swift.Bool in Consolidation8.ViewController.updatedSelectedNote(newNote: Consolidation8.Note) -&gt; ()"
+                  moduleName = "Consolidation8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cweirup/Library/Mobile%20Documents/com~apple~CloudDocs/100%20Days%20of%20Swift/Consolidation8/Consolidation8/ViewController.swift"
+                  timestampString = "580274632.874138"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Consolidation8/ViewController.swift"
+            timestampString = "580275316.941342"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "deleteNote(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

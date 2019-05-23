@@ -7,12 +7,8 @@ run: function(parameters) {
 },
     
 finalize: function(parameters) {
-<<<<<<< HEAD
-    
-=======
     var customJavaScript = parameters["customJavaScript"];
     eval(customJavaScript);
->>>>>>> 187b3c583e4030da2c42e04c4a0f9d930b529fe4
 }
     
 };

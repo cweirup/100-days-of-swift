@@ -9,8 +9,15 @@
 import Foundation
 
 struct Note: Codable {
-    var title: String
+    var id: String      // Using String representation of UUID for this
     var body: String
     var creationDate: Date
     var updatedDate: Date
+    
+    static func getFormattedDate(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
 }

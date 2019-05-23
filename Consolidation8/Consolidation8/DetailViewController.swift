@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var textView: UITextView!
     
     var note: Note!
+    weak var delegate: ViewController!
+    var willSaveNote = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,28 +37,9 @@ class DetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        print("Did we hit here when leaving?")
-        
-        note.body = textView.text
-        note.updatedDate = Date()
-        
-        let newNote = Note(title: note.title, body: textView.text, creationDate: note.creationDate, updatedDate: Date())
-        
-        // Save the note
-        let encoder = JSONEncoder()
-        print(newNote.body)
-        if let encoded = try? encoder.encode(newNote) {
-            UserDefaults.standard.set(encoded, forKey: newNote.title)
-        }
+
+        if willSaveNote == true { saveNote() }
     }
-    
-//    func save() {
-//        let encoder = JSONEncoder()
-//        if let encoded = try? encoder.encode(note) {
-//            UserDefaults.standard.set(encoded, forKey: note.title)
-//        }
-//    }
     
     @objc func shareTapped() {
         // Get the note details and then provide the share sheet
@@ -66,32 +49,27 @@ class DetailViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    func saveNote() {
+        let newNote = Note(id: note.id, body: textView.text, creationDate: note.creationDate, updatedDate: Date())
+        delegate.updatedSelectedNote(newNote: newNote)
+    }
+    
     @objc func addNote() {
         // Save any changes to current note to the stored array
+        saveNote()
         
         // Add a new note to array and load into this controller
+        note = Note(id: UUID().uuidString, body: "", creationDate: Date(), updatedDate: Date())
+        textView.text = note.body
     }
     
     @objc func deleteNote() {
-        // Delete this note from the controller and the array
+        delegate.deleteNote(id: note.id)
         
-        // return to the main controller
+        willSaveNote = false
+        
+        // Need to return to main ViewController
+        navigationController?.popToRootViewController(animated: true)
     }
-    
-    @objc func save() {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(note) {
-            UserDefaults.standard.set(encoded, forKey: note.title)
-        }
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

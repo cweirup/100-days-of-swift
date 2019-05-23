@@ -11,13 +11,6 @@ import MobileCoreServices
 
 class ActionViewController: UIViewController {
 
-<<<<<<< HEAD
-    @IBOutlet weak var imageView: UIImageView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-=======
     @IBOutlet var script: UITextView!
 
     var pageTitle = ""
@@ -32,15 +25,11 @@ class ActionViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
->>>>>>> 187b3c583e4030da2c42e04c4a0f9d930b529fe4
         if let inputItem = extensionContext?.inputItems.first as? NSExtensionItem {
             if let itemProvider = inputItem.attachments?.first {
                 itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String) { [weak self] (dict, error) in
                     guard let itemDictionary = dict as? NSDictionary else { return }
                     guard let javaScriptValues = itemDictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary else { return }
-<<<<<<< HEAD
-                    print(javaScriptValues)
-=======
                     
                     self?.pageTitle = javaScriptValues["title"] as? String ?? ""
                     self?.pageURL = javaScriptValues["URL"] as? String ?? ""
@@ -48,18 +37,12 @@ class ActionViewController: UIViewController {
                     DispatchQueue.main.async {
                         self?.title = self?.pageTitle
                     }
->>>>>>> 187b3c583e4030da2c42e04c4a0f9d930b529fe4
                 }
             }
         }
     }
 
     @IBAction func done() {
-<<<<<<< HEAD
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
-=======
         let item = NSExtensionItem()
         let argument: NSDictionary = ["customJavaScript": script.text]
         let webDictionary: NSDictionary = [NSExtensionJavaScriptFinalizeArgumentKey: argument]
@@ -86,7 +69,6 @@ class ActionViewController: UIViewController {
         
         let selectedRange = script.selectedRange
         script.scrollRangeToVisible(selectedRange)
->>>>>>> 187b3c583e4030da2c42e04c4a0f9d930b529fe4
     }
 
 }
