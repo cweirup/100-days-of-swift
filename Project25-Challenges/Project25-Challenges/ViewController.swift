@@ -84,7 +84,15 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
     @objc func showConnectedPeers() {
         guard let mcSession = mcSession else { return }
         
-        let listOfPeers = mcSession.connectedPeers.description
+        let listOfPeers = mcSession.connectedPeers.map( { $0.displayName } ).reduce("") { text, name in
+            if text == "" {
+                return "\(name)"
+            } else {
+                return "\(text), \(name)"
+            }
+        }
+        //let stringOfPeers = listOfPeers.reduce("") { text, name in "\(text), \(name)" }
+        
         let ac = UIAlertController(title: "Connected Peers", message: listOfPeers, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
