@@ -296,6 +296,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 loadBackground()
                 loadLevel(currentLevel)
                 createPlayer()
+                isGameOver = false
             }
         }
     }
