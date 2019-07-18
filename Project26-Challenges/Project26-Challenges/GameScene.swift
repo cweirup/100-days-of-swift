@@ -24,7 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var motionManager: CMMotionManager!
     var scoreLabel: SKLabelNode!
     var levelLabel: SKLabelNode!
-    let totalLevels = 5
+    let totalLevels = 6
     
     var score = 0 {
         didSet {
@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var currentLevel = 1 {
         didSet {
-            if currentLevel <= totalLevels {
+            if currentLevel < totalLevels {
                 levelLabel.text = "Level: \(currentLevel)"
             }
         }
@@ -45,10 +45,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var mapGrid = [[String]]()
     
     override func didMove(to view: SKView) {
-        loadBackground()
+        let background = SKSpriteNode(imageNamed: "background.jpg")
+        background.position = CGPoint(x: 512, y: 384)
+        background.blendMode = .replace
+        background.zPosition = -1
+        addChild(background)
         
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.name = "Score"
         scoreLabel.text = "Score: 0"
         scoreLabel.horizontalAlignmentMode = .left
         scoreLabel.position = CGPoint(x: 16, y: 16)
@@ -56,7 +59,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(scoreLabel)
         
         levelLabel = SKLabelNode(fontNamed: "Chalkduster")
-        levelLabel.name = "Level"
         levelLabel.text = "Level: 1"
         levelLabel.horizontalAlignmentMode = .right
         levelLabel.position = CGPoint(x: 1000, y: 16)
@@ -73,14 +75,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         motionManager.startAccelerometerUpdates()
     }
 
-    func loadBackground() {
-        let background = SKSpriteNode(imageNamed: "background.jpg")
-        background.position = CGPoint(x: 512, y: 384)
-        background.blendMode = .replace
-        background.zPosition = -1
-        addChild(background)
-    }
-    
     func createPlayer() {
         player = SKSpriteNode(imageNamed: "player")
         player.position = CGPoint(x: 96, y: 672)
@@ -94,7 +88,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.collisionBitMask = CollisionTypes.wall.rawValue
         addChild(player)
     }
-    
     func loadLevel(_ number: Int) {
         guard let levelURL = Bundle.main.url(forResource: "level\(number)", withExtension: "txt") else {
             fatalError("Could not find level1.txt from the app bundle.")
@@ -246,13 +239,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Move marble to empty space and fade in
             let randomRowNumber = Int.random(in: 1..<(mapGrid.count - 1))
             let randomRow = mapGrid[randomRowNumber]
-            
+            //print(mapGrid[mapGrid.count - 2])
+            //print("Random Row = \(randomRow)")
             // Create array of indexes of empty spaces
             let spacesInRow = randomRow.indices.filter { randomRow[$0] == " " }
             let randomColumn = spacesInRow.randomElement()!
             
             player.physicsBody?.isDynamic = false
-            isGameOver = false
             
             let position = CGPoint(x: (64 * randomColumn) + 32, y: (64 * randomRowNumber) + 32)
             let fadeOut = SKAction.fadeOut(withDuration: 0.25)
@@ -264,25 +257,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.run(sequence) { [weak self] in
                 self?.player.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 self?.player.physicsBody?.isDynamic = true
-                self?.isGameOver = false
             }
             
+            //player.physicsBody?.isDynamic = true
+            //player.removeAllActions()
         } else if node.name == "finish" {
-            isGameOver = true
-            
-            // Hide the player
-            let scale = SKAction.scale(to: 0.001, duration: 0.25)
-            let remove = SKAction.removeFromParent()
-            let sequence = SKAction.sequence([scale, remove])
-            
-            player.run(sequence)
-            
+            // next level?
+            // Increment Current Level
+            // Load new level
             currentLevel += 1
-            if currentLevel > totalLevels {
+            if currentLevel == totalLevels {
                 // end the game
                 // Stop all motion
-                isGameOver = true
-                scene?.physicsWorld.gravity = .zero
+                player.removeFromParent()
                 
                 let gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
                 gameOverLabel.text = "Game Over"
@@ -292,11 +279,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 gameOverLabel.zPosition = 3
                 addChild(gameOverLabel)
             } else {
+                // remove the current level
                 removeCurrentLevel()
-                loadBackground()
+                player.removeFromParent()
                 loadLevel(currentLevel)
                 createPlayer()
-                isGameOver = false
             }
         }
     }
@@ -304,11 +291,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func removeCurrentLevel() {
         // Cycle through all the nodes of the scene and
         // remove all of the nodes we placed
-        scene!.enumerateChildNodes(withName: "//*", using: { (node, true) in
-            if node.name != "Score" && node.name != "Level" {
-                node.removeFromParent()
-            }
-        })
+        let mazeNodes = self.children.filter { $0.name != nil }
+        for node in mazeNodes {
+            let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+            let remove = SKAction.removeFromParent()
+            let sequence = SKAction.sequence([fadeOut, remove])
+            //node.removeFromParent()
+            node.run(sequence)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
