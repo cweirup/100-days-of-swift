@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
         
-        if currentDrawType > 6 {
+        if currentDrawType > 7 {
             currentDrawType = 0
         }
         
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
             drawImagesAndText()
         case 6:
             drawEmoji()
+        case 7:
+            drawWord()
         default:
             break
         }
@@ -173,36 +175,80 @@ class ViewController: UIViewController {
     func drawEmoji() {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
-        // Rotate by 36 degrees each time
-        // Outer radius = 100
-        // Inner radius = 38.2 (100 * .382)
+        let image = renderer.image { ctx in
+            // Draw big ellipse
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 5, dy: 5)
+            ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(5)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // Draw eyes
+            let eye1 = CGRect(x: 112, y: 150, width: 75, height: 75)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(1)
+            
+            ctx.cgContext.addEllipse(in: eye1)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            let eye2 = CGRect(x: 325, y: 150, width: 75, height: 75)
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(1)
+            
+            ctx.cgContext.addEllipse(in: eye2)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // Draw mouth
+            ctx.cgContext.setLineCap(.round)
+            ctx.cgContext.setLineWidth(20)
+            ctx.cgContext.move(to: CGPoint(x: 112, y: 350))
+            ctx.cgContext.addLine(to: CGPoint(x: 400, y: 350))
+            ctx.cgContext.strokePath()
+        }
+        
+        imageView.image = image
+    }
+    
+    func drawWord() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
         let image = renderer.image { ctx in
-            ctx.cgContext.translateBy(x: 256, y: 256)
+            ctx.cgContext.translateBy(x: 100, y: 140)
+            ctx.cgContext.setLineCap(.round)
+            ctx.cgContext.setLineWidth(2)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             
-            let rotations = 10
-            var first = true
-            var length: CGFloat = 100
-            var outerRadius: CGFloat = 100
-            var innerRadius: CGFloat = 38.2
+            // Draw T
+            ctx.cgContext.move(to: CGPoint(x: 5, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 105, y: 5))
+            ctx.cgContext.move(to: CGPoint(x: 55, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 55, y: 105))
             
-            for currentRotation in 0 ..< rotations {
-                //ctx.cgContext.rotate(by: .pi / 2)
-                
-                if first {
-                    ctx.cgContext.move(to: CGPoint(x: outerRadius, y: 0))
-                    first = false
-                } else {
-                    if currentRotation.isMultiple(of: 2) {
-                        ctx.cgContext.addLine(to: CGPoint(x: outerRadius, y: <#T##CGFloat#>))
-                    }
-                    ctx.cgContext.addLine(to: CGPoint(x: length, y: 50))
-                }
+            // Draw W
+            ctx.cgContext.move(to: CGPoint(x: 110, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 110, y: 105))
+            ctx.cgContext.addLine(to: CGPoint(x: 160, y: 55))
+            ctx.cgContext.addLine(to: CGPoint(x: 210, y: 105))
+            ctx.cgContext.addLine(to: CGPoint(x: 210, y: 5))
             
-                ctx.cgContext.rotate(by: .pi / 2)
-            }
+            // Draw I
+            ctx.cgContext.move(to: CGPoint(x: 215, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 235, y: 5))
+            ctx.cgContext.move(to: CGPoint(x: 225, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 225, y: 105))
+            ctx.cgContext.move(to: CGPoint(x: 215, y: 105))
+            ctx.cgContext.addLine(to: CGPoint(x: 235, y: 105))
             
-            ctx.cgContext.setStrokeColor(UIColor.orange.cgColor)
+            // Draw N
+            ctx.cgContext.move(to: CGPoint(x: 240, y: 105))
+            ctx.cgContext.addLine(to: CGPoint(x: 240, y: 5))
+            ctx.cgContext.addLine(to: CGPoint(x: 300, y: 105))
+            ctx.cgContext.addLine(to: CGPoint(x: 300, y: 5))
+            
             ctx.cgContext.strokePath()
         }
         
