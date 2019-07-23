@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
 
@@ -14,12 +15,37 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Nothing to see here"
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     @IBAction func authenticateTapped(_ sender: Any) {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+                        self?.unlockSecretMessage()
+                    } else {
+                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(ac, animated: true)
+                    }
+                }
+            }
+        } else {
+            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
@@ -40,5 +66,22 @@ class ViewController: UIViewController {
         secret.scrollRangeToVisible(selectedRange)
     }
     
+    func unlockSecretMessage() {
+        secret.isHidden = false
+        title = "Secret stuff!"
+        
+        if let text = KeychainWrapper.standard.string(forKey: "SecretMessage") {
+            secret.text = text
+        }
+    }
+    
+    @objc func saveSecretMessage() {
+        guard secret.isHidden == false else { return }
+        
+        KeychainWrapper.standard.set(secret.text, forKey: "SecretMessage")
+        secret.resignFirstResponder()
+        secret.isHidden = true
+        title = "Nothing to see here"
+    }
 }
 
