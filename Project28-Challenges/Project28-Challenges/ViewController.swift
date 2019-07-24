@@ -12,15 +12,24 @@ import LocalAuthentication
 class ViewController: UIViewController {
 
     @IBOutlet weak var secret: UITextView!
+    var lockButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Nothing to see here"
         
+        navigationItem.rightBarButtonItem = nil
+        lockButton = UIBarButtonItem(title: "Lock", style: .plain, target: self, action: #selector(lockScreen))
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        // Set the password
+        let saveSuccessful: Bool = KeychainWrapper.standard.set("testpass", forKey: "secureText")
+        print(saveSuccessful)
     }
 
     @IBAction func authenticateTapped(_ sender: Any) {
@@ -42,7 +51,36 @@ class ViewController: UIViewController {
                 }
             }
         } else {
-            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication", preferredStyle: .alert)
+//            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .default))
+//            present(ac, animated: true)
+            
+            let ac = UIAlertController(title: "Biometry unavailable", message: "Enter password to view contents", preferredStyle: .alert)
+            ac.addTextField()
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) {
+                [weak self, weak ac] action in
+                guard let password = ac?.textFields?[0].text else { return }
+                self?.submit(password)
+            }
+            
+            ac.addAction(submitAction)
+            present(ac, animated: true)
+        }
+    }
+    
+    @objc func lockScreen() {
+        // Lock Screen
+        saveSecretMessage()
+    }
+    
+    func submit(_ password: String) {
+        guard let retrievedString: String = KeychainWrapper.standard.string(forKey: "secureText") else { return }
+        
+        if retrievedString == password {
+            unlockSecretMessage()
+        } else {
+            let ac = UIAlertController(title: "Authentication failed", message: "Incorrect password", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
@@ -69,6 +107,7 @@ class ViewController: UIViewController {
     func unlockSecretMessage() {
         secret.isHidden = false
         title = "Secret stuff!"
+        navigationItem.rightBarButtonItem = lockButton
         
         if let text = KeychainWrapper.standard.string(forKey: "SecretMessage") {
             secret.text = text
@@ -82,6 +121,7 @@ class ViewController: UIViewController {
         secret.resignFirstResponder()
         secret.isHidden = true
         title = "Nothing to see here"
+        navigationItem.rightBarButtonItem = nil
     }
 }
 
